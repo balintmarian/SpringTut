@@ -1,25 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Employee</title>
+
 </head>
 <body>
-<table>
+<table style="100%">
     <tr>
-        <th>Employ id</th>
+        <th>ID</th>
         <th>First Name</th>
         <th>Last Name</th>
         <th>Gender</th>
     </tr>
-    <tr>
-        <td>Bob</td>
-        <td>Yellow</td>
+    <tr th:each="employee, rowStat: ${employee}"
+        th:style="${rowStat.odd} ? 'color: gray' : 'color: blue;'">
+        <td th:text="${employee.empNo}">employee id</td>
+        <td th:text="${employee.firstName}">first name</td>
+        <td th:text="${employee.lastName}">last name</td>
+        <td th:text="${employee.gender}">gender</td>
     </tr>
-    <tr>
-        <td>Michelle</td>
-        <td>Purple</td>
-    </tr>
+
 </table>
 
 
