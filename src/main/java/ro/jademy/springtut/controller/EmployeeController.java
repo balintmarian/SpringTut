@@ -10,6 +10,7 @@ import ro.jademy.springtut.repository.EmployeeRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Controller
@@ -27,13 +28,11 @@ public class EmployeeController {
 
     @RequestMapping("/employeeinfo/{empNo}")
     public String employee(@PathVariable(value = "empNo") int empNo, Model model) {
-//        List<Employee> employees = employeeRepository.findAll();
-//        List<Employee> employeeInfoList;
-//        employeeInfoList = employees.stream().filter(employee -> employee.getId()==empNo).collect(Collectors.toList());
-//        //model.addAttribute("employeeInfo",employeeRepository.findById(empNo));
-//        model.addAttribute("employeeInfo",employeeInfoList);
-        //employeeRepository.findById(empNo);
-        model.addAttribute("employeeInfo", employeeRepository.findAll());
+
+        Optional<Employee> empOpt = employeeRepository.findById(empNo);
+
+        empOpt.ifPresent(employee -> model.addAttribute("employeeInfo", employee));
+
 
 
         return "employeeInfo";

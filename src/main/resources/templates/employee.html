@@ -16,11 +16,11 @@
     <!--<a th:href="${'/employee/' + employee.id}">-->
     <tr th:each="employee, rowStat: ${employee}"
         th:style="${rowStat.odd} ? 'color: gray' : 'color: blue;'">
-        <td th:text="${employee.id}">kjjh</td>
-        <td th:text="${employee.firstName}">first name</td>
-        <td th:text="${employee.lastName}">last name</td>
-        <td th:text="${employee.gender}">gender</td>
-        <td><a th:href="${'/employeeinfo/' + employee.id}">Click me</a></td>
+        <td ><a th:href="${'/employeeinfo/' + employee.id}" th:text="${employee.id}"></a></td>
+        <td><a th:href="${'/employeeinfo/' + employee.id}" th:text="${employee.firstName}"></a></td>
+        <td><a th:href="${'/employeeinfo/' + employee.id}" th:text="${employee.lastName}"></a></td>
+        <td><a th:href="${'/employeeinfo/' + employee.id}" th:text="${employee.gender}"></a></td>
+        <!--<td><a th:href="${'/employeeinfo/' + employee.id}">Click me</a></td>-->
 
     </tr>
     <!--</a>-->

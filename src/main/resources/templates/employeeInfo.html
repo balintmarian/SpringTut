@@ -13,12 +13,15 @@
         <th>Gender</th>
     </tr>
     <!--<a th:href="${'/employee/' + employee.id}">-->
-    <tr th:each="employee, rowStat: ${employee}"
-        th:style="${rowStat.odd} ? 'color: gray' : 'color: blue;'">
-        <td th:text="${employee.id}">kjjh</td>
-        <td th:text="${employee.firstName}">first name</td>
-        <td th:text="${employee.lastName}">last name</td>
-        <td th:text="${employee.gender}">gender</td>
+    <tr th:if="${employeeInfo}">
+        <td th:text="${employeeInfo.id}">kjjh</td>
+        <td th:text="${employeeInfo.firstName}">first name</td>
+        <td th:text="${employeeInfo.lastName}">last name</td>
+        <td th:text="${employeeInfo.gender}">gender</td>
+        <!--<td th:text="${employeeInfo.department}">gender</td>-->
+    </tr>
+    <tr th:unless="${employeeInfo}">
+        <td colspan="4">No user present</td>
     </tr>
     <!--</a>-->
 </table>
