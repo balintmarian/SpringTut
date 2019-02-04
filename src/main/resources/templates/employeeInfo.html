@@ -2,8 +2,7 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>Employee</title>
-
+    <title>EmpInfo</title>
 </head>
 <body>
 <table style="100%">
@@ -20,12 +19,8 @@
         <td th:text="${employee.firstName}">first name</td>
         <td th:text="${employee.lastName}">last name</td>
         <td th:text="${employee.gender}">gender</td>
-        <td><a th:href="${'/employeeinfo/' + employee.id}">Click me</a></td>
-
     </tr>
     <!--</a>-->
 </table>
-
-
 </body>
 </html>

@@ -7,5 +7,6 @@ import ro.jademy.springtut.models.Employee;
 import java.util.List;
 
 public interface DepartmentsRepository extends CrudRepository<Department,String> {
+    @Override
     List<Department> findAll();
 }

@@ -10,7 +10,7 @@ public class Employee {
     @Id
     @GeneratedValue//(strategy = GenerationType.AUTO)
     @Column(name = "EMP_NO")
-    private int empNo;
+    private int id;
     //@NaturalId
     @Column(name = "FIRST_NAME")
     private String firstName;
@@ -40,15 +40,15 @@ public class Employee {
         this.lastName = lastName;
     }
 
-    public Employee(int empNo, String firstName, String lastName, String gender) {
-        this.empNo = empNo;
+    public Employee(int id, String firstName, String lastName, String gender) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
     }
 
-    public Employee(int empNo, String firstName, String lastName, String gender, Date hireDate, Date birthDate) {
-        this.empNo = empNo;
+    public Employee(int id, String firstName, String lastName, String gender, Date hireDate, Date birthDate) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
@@ -56,12 +56,12 @@ public class Employee {
         this.birthDate = birthDate;
     }
 
-    public int getEmpNo() {
-        return empNo;
+    public int getId() {
+        return id;
     }
 
-    public void setEmpNo(int empNo) {
-        this.empNo = empNo;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFirstName() {
